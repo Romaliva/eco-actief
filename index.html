@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eco-Actief</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .header {
+            background: url('header.jpg') no-repeat center center/cover;
+            color: #fff;
+            padding: 50px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 3.5em;
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #a4d4ae;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .header {
+                padding: 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .header h1 {
+                font-size: 1.5em;
+            }
+        }
+       .choice-section {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .choice {
+            width: 30%;
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+		.choice a {
+    color: #a4d4ae; /* Vervang #jouwKleur door de gewenste hex-code */
+    text-decoration: none; /* Verwijdert de onderstreping van de link */
+}
+
+.choice a:hover {
+    color: #a4d4ae; /* Kleur voor als de muis over de link beweegt */
+}
+
+        .choice:hover {
+            transform: scale(1.05);
+        }
+
+      .choice img {
+    width: 100%; /* Breedte vult de parent container */
+    height: 200px; /* Vaste hoogte */
+    object-fit: cover; /* Zorgt dat de afbeelding de container vult zonder de aspect ratio te verliezen */
+    border-radius: 10px; /* Behoudt de afgeronde hoeken */
+}
+
+        .choice h3 {
+            margin-top: 10px;
+        }
+
+    
+       
+			    .dynamic-text-section {
+            background: linear-gradient(135deg, #a4d4ae 30%, #88c9b7 100%);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dynamic-text-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('path-to-background-pattern.png');
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .dynamic-text-section h2 {
+            margin-top: 0;
+            font-size: 2.5em;
+        }
+
+        .dynamic-text-section p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: auto;
+        }
+
+  
+
+            .dynamic-text-section h2 {
+                font-size: 2em;
+            }
+                .facts-section {
+            background-color: #f4f4f4;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .fact-box {
+            display: inline-block;
+            background-color: white;
+            margin: 10px;
+            padding: 20px;
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .fact-box h3 {
+            color: #32612D; /* Groene kleur */
+            margin-top: 0;
+        }
+
+        .fact-box p {
+            color: #666;
+        }
+        .eco-tips-section {
+            background-color: #eef6f2; /* Zeer lichtgroene achtergrond */
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+.tip {
+    background-color: white;
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex; /* Gebruik flex layout */
+    flex-direction: column; /* Elementen verticaal stapelen */
+    align-items: center; /* Centreren van inhoud */
+}
+
+.tip img {
+    width: 100%; /* Volledige breedte van de container */
+    height: auto; /* Behoud van aspect ratio */
+    border-radius: 10px;
+}
+
+.tip h3, .tip p {
+    width: 100%; /* Zorgt dat tekst de breedte van de container volgt */
+    text-align: center; /* Tekst centreren */
+}
+
+        .read-more {
+            color: #32612D;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+		     .eco-quiz {
+            background-color: #e8f5e9; /* Lichtgroene achtergrond */
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .quiz-question {
+            background-color: white;
+            margin: 20px auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            margin-bottom: 15px;
+        }
+
+        .answers {
+            list-style: none;
+            padding: 0;
+        }
+
+        .answers li {
+            margin-bottom: 10px;
+        }
+
+        .answer-button {
+            background-color: #32612D; /* Groene kleur */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+		   .start-quiz-button {
+        background-color: #4CAF50; /* Groene kleur */
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+        text-decoration: none;
+        margin-top: 20px;
+    }
+
+    .start-quiz-button:hover {
+        background-color: #45a049; /* Iets donkerder groen */
+        transform: scale(1.05); /* Licht vergroten bij hover */
+    }
+	.site-footer {
+    background-color: #93846f; /* Lichtbruine kleur */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.footer-links li {
+    margin: 0 10px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #a4d4ae; /* Lichte kleurverandering bij hover */
+}
+
+@media (max-width: 768px) {
+    .footer-links {
+        flex-direction: column;
+    }
+
+    .footer-links li {
+        margin-bottom: 10px;
+    }
+	@media (max-width: 768px) {
+    .tip {
+        width: 95%; /* Grotere breedte voor kleinere schermen */
+    }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .quiz-question {
+                width: 95%;
+            }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .tip {
+                width: 95%;
+            }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .fact-box {
+                width: auto;
+                margin: 10px 5px;
+				
+				  /* Responsive design */
+        @media (max-width: 768px) {
+            .dynamic-text-section {
+                padding: 30px 10px;
+            }
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Eco-Actief</h1>
+        <div class="nav-menu">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="nieuws.html">Nieuws</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#about">Over Ons</a></li>
+            </ul>
+        </div>
+    </div>
+<div class="choice-section">
+    <div class="choice">
+        <a href="binnenshuis.html">
+            <img src="binnen.jpg" alt="Binnenshuis">
+            <h3>Binnenshuis</h3>
+        </a>
+    </div>
+    <div class="choice">
+        <a href="buitenshuis.html">
+            <img src="buiten.jpg" alt="Buitenshuis">
+            <h3>Buitenshuis</h3>
+        </a>
+    </div>
+    <div class="choice">
+        <a href="ecoproducten.html">
+            <img src="product.jpg" alt="Eco Producten">
+            <h3>Eco Producten</h3>
+        </a>
+    </div>
+</div>
+  
+	  <div class="dynamic-text-section">
+        <h2>Waarom Duurzaamheid Belangrijk Is</h2>
+        <p>Duurzaamheid beschermt onze planeet en verbetert de toekomst. Het draait om het evenwicht tussen menselijke behoeften en de aarde.</p>
+    </div>
+	
+
+<div class="tip">
+    <img src="plastic.jpg" alt="Afbeelding voor Tip 1">
+    <h3>Tip 1: Minder Plastic Gebruiken</h3>
+    <p>Ontdek hoe je dagelijks plastic kunt verminderen door herbruikbare tassen, flessen en containers te gebruiken.</p>
+    <a href="tip1.html" class="read-more">Lees meer</a>
+</div>
+
+<div class="tip">
+    <img src="lamp.jpg" alt="Afbeelding voor Tip 2">
+    <h3>Tip 2: Energie Besparen</h3>
+    <p>Leer eenvoudige manieren om energie te besparen in huis, zoals het uitschakelen van apparaten wanneer ze niet in gebruik zijn.</p>
+    <a href="tip2.html" class="read-more">Lees meer</a>
+</div>
+	
+<div class="eco-quiz">
+    <h2>Doe Mee Met Onze Eco-Quiz!</h2>
+    <button class="start-quiz-button" onclick="startQuiz()">Start de Quiz</button>
+    <!-- Vraag 1 -->
+    <div id="question1" class="quiz-question" style="display: none;">
+        <div class="question">
+            <p>Hoeveel liter water kun je gemiddeld besparen door een minuut korter te douchen?</p>
+        </div>
+        <ul class="answers">
+            <li><button class="answer-button" onclick="checkAnswer(1, 'A')">5 liter</button></li>
+            <li><button class="answer-button" onclick="checkAnswer(1, 'B')">10 liter</button></li>
+            <li><button class="answer-button" onclick="checkAnswer(1, 'C')">15 liter</button></li>
+        </ul>
+    </div>
+	  <div id="question2" class="quiz-question" style="display: none;">
+        <div class="question">
+            <p>Welk type verlichting is het meest energiezuinig?</p>
+        </div>
+        <ul class="answers">
+            <li><button class="answer-button" onclick="checkAnswer(2, 'A')">Gloeilampen</button></li>
+            <li><button class="answer-button" onclick="checkAnswer(2, 'B')">Halogeenlampen</button></li>
+            <li><button class="answer-button" onclick="checkAnswer(2, 'C')">LED-lampen</button></li>
+        </ul>
+    </div>
+	  <div id="question3" class="quiz-question" style="display: none;">
+        <div class="question">
+            <p>Welk type energie veroorzaakt de minste CO2-uitstoot?</p>
+        </div>
+        <ul class="answers">
+            <li><button class="answer-button" onclick="checkAnswer(3, 'A')">Steenkool</button></li>
+            <li><button class="answer-button" onclick="checkAnswer(3, 'B')">Aardgas</button></li>
+            <li><button class="answer-button" onclick="checkAnswer(3, 'C')">Zonne-energie</button></li>
+        </ul>
+    </div>
+	  <div id="question4" class="quiz-question" style="display: none;">
+        <div class="question">
+            <p>Wat is de meest duurzame manier van vervoer voor lange afstanden?</p>
+        </div>
+        <ul class="answers">
+            <li><button class="answer-button" onclick="checkAnswer(4, 'A')">Vliegtuig</button></li>
+            <li><button class="answer-button" onclick="checkAnswer(4, 'B')">Trein </button></li>
+            <li><button class="answer-button" onclick="checkAnswer(4, 'C')">Auto</button></li>
+        </ul>
+    </div>
+	  <div id="question5" class="quiz-question" style="display: none;">
+        <div class="question">
+            <p>Wat is een effectieve manier om thuis energie te besparen?</p>
+        </div>
+        <ul class="answers">
+            <li><button class="answer-button" onclick="checkAnswer(5, 'A')">Laat apparaten de hele nacht aan staan</button></li>
+            <li><button class="answer-button" onclick="checkAnswer(5, 'B')">Gebruik een programmeerbare thermostaat</button></li>
+            <li><button class="answer-button" onclick="checkAnswer(5, 'C')">Houd ramen open in de winter</button></li>
+        </ul>
+    </div>
+	  <div id="question6" class="quiz-question" style="display: none;">
+        <div class="question">
+            <p>Hoe vaak moet je plastic waterflessen gebruiken voordat ze 'groener' zijn dan eenmalige flessen?</p>
+        </div>
+        <ul class="answers">
+            <li><button class="answer-button" onclick="checkAnswer(6, 'A')">Na 10 keer</button></li>
+            <li><button class="answer-button" onclick="checkAnswer(6, 'B')">Na 50 keer</button></li>
+            <li><button class="answer-button" onclick="checkAnswer(6, 'C')">Meer dan 100 keer</button></li>
+        </ul>
+    </div>
+	  <div id="question7" class="quiz-question" style="display: none;">
+        <div class="question">
+            <p>Welke van de volgende is een hernieuwbare bron?</p>
+        </div>
+        <ul class="answers">
+            <li><button class="answer-button" onclick="checkAnswer(7, 'A')">Olie</button></li>
+            <li><button class="answer-button" onclick="checkAnswer(7, 'B')">Wind</button></li>
+            <li><button class="answer-button" onclick="checkAnswer(7, 'C')">Steenkool</button></li>
+        </ul>
+    </div>
+	  <div id="question8" class="quiz-question" style="display: none;">
+        <div class="question">
+            <p>Wat is de grootste bron van broeikasgassen?</p>
+        </div>
+        <ul class="answers">
+            <li><button class="answer-button" onclick="checkAnswer(8, 'A')">Transport</button></li>
+            <li><button class="answer-button" onclick="checkAnswer(8, 'B')">Industrie</button></li>
+            <li><button class="answer-button" onclick="checkAnswer(8, 'C')">Elektriciteitsproductie</button></li>
+        </ul>
+    </div>
+	  <div id="question9" class="quiz-question" style="display: none;">
+        <div class="question">
+            <p>Welke praktijk helpt bij het verminderen van voedselverspilling?</p>
+        </div>
+        <ul class="answers">
+            <li><button class="answer-button" onclick="checkAnswer(9, 'A')">Het kopen van meer voedsel dan nodig is</button></li>
+            <li><button class="answer-button" onclick="checkAnswer(9, 'B')">Het plannen van maaltijden en het maken van boodschappenlijstjes</button></li>
+            <li><button class="answer-button" onclick="checkAnswer(9, 'C')">Het gebruik van individueel verpakte producten</button></li>
+        </ul>
+    </div>
+	  <div id="question10" class="quiz-question" style="display: none;">
+        <div class="question">
+            <p>Wat is een eenvoudige manier om water te besparen in de tuin?</p>
+        </div>
+        <ul class="answers">
+            <li><button class="answer-button" onclick="checkAnswer(10, 'A')">Water geven op het heetst van de dag</button></li>
+            <li><button class="answer-button" onclick="checkAnswer(10, 'B')">Gebruik van inheemse planten</button></li>
+            <li><button class="answer-button" onclick="checkAnswer(10, 'C')">Dagelijks water geven</button></li>
+        </ul>
+    </div>
+
+    <!-- Herhaal deze structuur voor elke vraag tot vraag 10 -->
+    <!-- Zorg ervoor dat je de id en questionNumber in de checkAnswer functie oproepen aanpast -->
+
+    <!-- Resultaten sectie -->
+    <div id="quizResult" class="quiz-result" style="display:none;">
+        <p>Je score: <span id="score">0</span> van de 10</p>
+    </div>
+	<div class="facts-section">
+        <div class="fact-box">
+            <h3>Vermindering van Watergebruik</h3>
+            <p>Douchen kost gemiddeld 10 liter water per minuut. Een korte douche kan aanzienlijk besparen op je watergebruik.</p>
+        </div>
+        <div class="fact-box">
+            <h3>Hergebruik en Recyclen</h3>
+            <p>Door te recyclen vermindert de vraag naar nieuwe materialen, wat helpt om natuurlijke bronnen te sparen.</p>
+        </div>
+        <div class="fact-box">
+            <h3>Lokale Producten</h3>
+            <p>Lokaal gekochte producten verminderen de CO2-voetafdruk die gepaard gaat met lange transportafstanden.</p>
+        </div>
+        <div class="fact-box">
+            <h3>Energiebesparing</h3>
+            <p>Het gebruik van LED-lampen in plaats van traditionele gloeilampen kan het energieverbruik aanzienlijk verlagen.</p>
+        </div>
+        <div class="fact-box">
+            <h3>Verantwoord Reizen</h3>
+            <p>Fietsen of lopen in plaats van rijden voor korte afstanden kan de CO2-uitstoot sterk verminderen.</p>
+        </div>
+</div>
+
+
+
+
+    <!-- De rest van je website -->
+<script>
+let answers = {
+    1: 'B', 2: 'C', 3: 'C', 4: 'B', 5: 'B',
+    6: 'C', 7: 'B', 8: 'C', 9: 'B', 10: 'B'
+};
+
+let score = 0;
+let currentQuestion = 1;
+
+function checkAnswer(questionNumber, answer) {
+    if(answers[questionNumber] === answer) {
+        score++;
+    }
+
+    // Verberg de huidige vraag
+    let currentQuestionDiv = document.getElementById('question' + questionNumber);
+    currentQuestionDiv.style.display = 'none';
+
+    // Bereidt de volgende vraag voor of toon de score
+    if (questionNumber < 10) {
+        currentQuestion++;
+        let nextQuestionDiv = document.getElementById('question' + currentQuestion);
+        nextQuestionDiv.style.display = 'block';
+    } else {
+        document.getElementById('quizResult').style.display = 'block';
+        document.getElementById('score').innerText = score;
+    }
+}
+
+function startQuiz() {
+    document.getElementById('question1').style.display = 'block';
+    document.querySelector('.start-quiz-button').style.display = 'none';
+}
+</script>
+<footer class="site-footer">
+    <p>&copy; 2024 Eco-Actief. Alle rechten voorbehouden.</p>
+    <ul class="footer-links">
+        <li><a href="privacybeleid.html">Privacybeleid</a></li>
+        <li><a href="gebruikers.html">Gebruiksvoorwaarden</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</footer>
+</body>
+</html>

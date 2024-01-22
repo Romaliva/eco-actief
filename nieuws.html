@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <title>Nieuwe Pagina - Eco-Actief</title>
+    <style>
+         body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .header {
+            background: url('header.jpg') no-repeat center center/cover;
+            color: #fff;
+            padding: 50px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 3.5em;
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #a4d4ae;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .header {
+                padding: 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .header h1 {
+                font-size: 1.5em;
+            }
+        }
+
+        .site-footer {
+            background-color: #93846f;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9em;
+        }
+
+        .site-footer p {
+            margin: 0;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .footer-links li {
+            margin: 0 10px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #a4d4ae;
+        }
+
+        @media (max-width: 768px) {
+            .footer-links {
+                flex-direction: column;
+            }
+
+            .footer-links li {
+                margin-bottom: 10px;
+            }
+        }
+		.tip-list-container {
+    padding: 20px;
+}
+
+.tip {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    padding: 15px;
+    transition: box-shadow 0.3s ease;
+}
+
+.tip h3 {
+    color: #32612D;
+    margin-bottom: 5px;
+}
+
+.tip p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.tip:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+    .news-card {
+        flex-direction: column;
+    }
+
+    .news-card img {
+        width: 100%;
+        height: auto;
+    }
+
+    .news-content h3 {
+        font-size: 1.2em; /* Kleinere koppen voor mobiel */
+    }
+
+    .news-section-container, .tip-list-container {
+        padding: 10px;
+    }
+
+    .tip, .news-card {
+        padding: 10px;
+    }
+    .tip {
+        padding: 10px;
+    }
+}
+        .news-section-container {
+            padding: 20px;
+        }
+        .news-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+            display: flex;
+            overflow: hidden;
+        }
+        .news-card img {
+            width: 30%;
+            height: auto;
+        }
+        .news-content {
+            padding: 15px;
+        }
+        .news-content h3 {
+            margin-top: 0;
+        }
+        @media (max-width: 768px) {
+            .news-card {
+                flex-direction: column;
+            }
+            .news-card img {
+                width: 100%;
+            }
+        }
+			.site-footer {
+ @media (max-width: 768px) {
+    .header {
+        padding: 10px;
+    }
+    .header h1 {
+        font-size: 2em; /* Kleinere tekst voor mobiel */
+    }
+    .nav-menu {
+        display: none; /* Verberg navigatie voor kleinere schermen */
+    }
+    /* Overweeg een mobiel menu toe te voegen hier */
+    
+    .news-content h3 {
+        font-size: 1.2em; /* Kleinere koppen voor mobiel */
+    }
+
+    .news-section-container, .tip-list-container {
+        padding: 10px;
+    }
+
+    .tip, .news-card {
+        padding: 10px;
+    }
+
+    /* Overige mobiele stijlaanpassingen */
+}
+
+/* Touch-vriendelijke elementen */
+.nav-links a, .footer-links a {
+    padding: 10px; /* Grotere aanraakgebieden */
+}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Eco-Actief - Nieuws</h1>
+         <div class="nav-menu">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="nieuws.html">Nieuws</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="overons.html">Over Ons</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- Nieuws Sectie -->
+    <div class="news-section-container">
+        <h2>Eco Nieuws</h2>
+        <!-- Voorbeeld van een nieuwskaart -->
+        <div class="news-card">
+            <img src="super.jpg" alt="Nieuws Afbeelding 1">
+            <div class="news-content">
+                <h3>Plasticvrije supermarkten winnen aan populariteit</h3>
+                  <p>De beweging naar plasticvrije supermarkten groeit snel. Steeds meer winkels nemen het initiatief om wegwerpplastic te elimineren en duurzame verpakkingsalternatieven te omarmen. Ontdek hoe deze trend onze planeet beschermt en de winkelervaring transformeert!</p>
+                <a href="nieuws1.html">Lees Meer</a>
+            </div>
+        </div>
+		        <div class="news-card">
+            <img src="waterstof.jpg" alt="Nieuws Afbeelding 1">
+            <div class="news-content">
+                <h3>Waterstoftechnologie maakt groene brandstofrevolutie mogelijk</h3>
+                <p>Ontdek hoe waterstof de wereld van schone energie verandert. Lees verder om te weten te komen hoe deze innovatie koolstofvrije brandstof een realiteit maakt!</p>
+                <a href="nieuws2.html">Lees Meer</a>
+            </div>
+        </div>
+			        <div class="news-card">
+            <img src="wind.jpg" alt="Nieuws Afbeelding 1">
+            <div class="news-content">
+                <h3>Nederland zet grote stappen richting duurzame energie met nieuwe windmolenparken</h3>
+                <p>Nederland neemt serieuze stappen op weg naar een duurzame toekomst! Ontdek hoe het land nieuwe windmolenparken bouwt en de weg vrijmaakt voor schone energie.</p>
+                <a href="nieuws3.html">Lees Meer</a>
+            </div>
+        </div>
+        <!-- Herhaal voor meer nieuwsitems -->
+    </div>
+
+    <!-- Footer -->
+<footer class="site-footer">
+    <p>&copy; 2024 Eco-Actief. Alle rechten voorbehouden.</p>
+    <ul class="footer-links">
+        <li><a href="privacybeleid.html">Privacybeleid</a></li>
+        <li><a href="gebruikers.html">Gebruiksvoorwaarden</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</footer>
+
+</body>
+</html>

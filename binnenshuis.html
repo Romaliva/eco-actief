@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <title>Nieuwe Pagina - Eco-Actief</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .header {
+            background: url('header.jpg') no-repeat center center/cover;
+            color: #fff;
+            padding: 50px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 3.5em;
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #a4d4ae;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .header {
+                padding: 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .header h1 {
+                font-size: 1.5em;
+            }
+        }
+
+        .site-footer {
+            background-color: #93846f;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9em;
+        }
+
+        .site-footer p {
+            margin: 0;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .footer-links li {
+            margin: 0 10px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #a4d4ae;
+        }
+
+        @media (max-width: 768px) {
+            .footer-links {
+                flex-direction: column;
+            }
+
+            .footer-links li {
+                margin-bottom: 10px;
+            }
+        }
+
+        .tip-list-container {
+            padding: 20px;
+        }
+
+        .tip {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+            padding: 15px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .tip h3 {
+            color: #32612D;
+            margin-bottom: 5px;
+        }
+
+        .tip p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .tip:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            .tip-list-container {
+                padding: 10px;
+            }
+
+            .tip {
+                padding: 10px;
+            }
+        }
+.image-container {
+    display: flex;
+    justify-content: space-around; /* Zorgt voor gelijke ruimte rondom de afbeeldingen */
+    flex-wrap: wrap; /* Zorgt ervoor dat afbeeldingen indien nodig naar de volgende regel gaan */
+    margin: 0 -10px; /* Compenseert voor de padding aan de buitenkant */
+}
+
+.image-box {
+    width: 18%; /* Verkleint de breedte iets om ruimte te maken voor marges */
+    position: relative;
+    padding: 10px; /* Voegt ruimte rondom elke afbeelding toe */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Voegt een subtiele schaduw toe */
+}
+
+.image-box img {
+    width: 100%; /* Zorgt ervoor dat de afbeelding zich aanpast aan de breedte van de .image-box */
+    height: auto; /* Behoudt de beeldverhouding */
+    border-radius: 8px; /* Maakt de hoeken van de afbeeldingen rond */
+}
+
+@media (max-width: 768px) {
+    .image-box {
+        width: 48%; /* Maakt afbeeldingen groter op kleinere schermen */
+    }
+}
+
+.image-text {
+    position: absolute;
+    color: white;
+    font-size: 1em;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 5px;
+}
+.image-box.active {
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.6); /* Groene schaduw voor het benadrukken */
+    transform: scale(1.05); /* Maakt de afbeelding iets groter */
+}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Eco-Actief - Binnenshuis</h1>
+        <nav class="nav-menu">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                 <li><a href="nieuws.html">Nieuws</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="overons.html">Over Ons</a></li>
+            </ul>
+        </nav>
+    </header>
+	
+	
+<section class="image-section">
+    <!-- Afbeelding en tekst containers -->
+    <div class="image-container">
+        <!-- Afbeelding 1 -->
+        <div class="image-box" data-content="content1" onclick="showContent('content1')">
+            <img src="apparaten.jpg" alt="Image 1">
+            <div class="image-text">Energie Efficiente Apparaten</div>
+        </div>
+
+        <!-- Afbeelding 2 -->
+        <div class="image-box" data-content="content2" onclick="showContent('content2')">
+            <img src="thermo.jpg" alt="Image 2">
+            <div class="image-text">Slimme Thermostaat</div>
+        </div>
+
+        <!-- Afbeelding 3 -->
+        <div class="image-box" data-content="content3" onclick="showContent('content3')">
+            <img src="water.jpg" alt="Image 3">
+            <div class="image-text">Water Besparende Voorzieningen</div>
+        </div>
+
+        <!-- Afbeelding 4 -->
+        <div class="image-box" data-content="content4" onclick="showContent('content4')">
+            <img src="planten.jpg" alt="Image 4">
+            <div class="image-text">Lucht Zuiverende Planten</div>
+        </div>
+
+        <!-- Afbeelding 5 -->
+        <div class="image-box" data-content="content5" onclick="showContent('content5')">
+            <img src="groen.jpg" alt="Image 5">
+            <div class="image-text">Groene Stroom</div>
+        </div>
+    </div>
+
+    <!-- Inhoud voor elke afbeelding -->
+    <div id="content1" class="content" style="display:none;">
+            <h1>Inleiding</h1>
+    <p>In een wereld waar de vraag naar energie voortdurend toeneemt en zorgen over klimaatverandering steeds urgenter worden, is de ontwikkeling en adoptie van energie-efficiënte apparaten van vitaal belang. Deze apparaten helpen niet alleen om energie te besparen en de energierekening te verlagen, maar dragen ook bij aan het verminderen van de uitstoot van broeikasgassen en het behoud van natuurlijke hulpbronnen. In dit rapport zullen we de betekenis, voordelen en toepassingen van energie-efficiënte apparaten onderzoeken.</p>
+
+    <h2>Definitie en Werking</h2>
+    <p>Energie-efficiënte apparaten zijn elektronische apparaten en systemen die energie zuiniger gebruiken dan hun conventionele tegenhangers. Ze zijn ontworpen om dezelfde of betere prestaties te leveren met minder energieverbruik. Deze apparaten maken gebruik van geavanceerde technologieën, zoals geoptimaliseerde motoren, intelligente regelsystemen en materialen met een lage thermische geleidbaarheid, om energie te besparen.</p>
+    <p>De werking van energie-efficiënte apparaten is gebaseerd op verschillende principes, zoals:</p>
+    <ol>
+        <li>Energieomzetting: Efficiënte apparaten zetten energie om in de gewenste vorm met minimale verliezen.</li>
+        <li>Regulering van stroomverbruik: Ze passen hun stroomverbruik aan op basis van de huidige vraag, wat resulteert in minder verspilling.</li>
+        <li>Warmtehergebruik: Sommige apparaten hergebruiken warmte die anders verloren zou gaan, zoals warmtepompen die warmte uit de omgeving halen en gebruiken voor verwarming.</li>
+        <li>Optimalisatie van de werkcyclus: Ze zijn ontworpen om efficiënt te werken in verschillende werkingsmodi, waardoor energie wordt bespaard.</li>
+    </ol>
+
+    <h2>Voordelen van Energie-efficiënte Apparaten</h2>
+    <p>De voordelen van energie-efficiënte apparaten zijn talrijk en aanzienlijk, zowel op individueel als op maatschappelijk niveau:</p>
+    <ul>
+        <li>Energiebesparing: Ze verminderen het energieverbruik, wat resulteert in lagere energierekeningen voor huishoudens en bedrijven.</li>
+        <li>Milieuvriendelijk: Minder energieverbruik leidt tot een lagere uitstoot van broeikasgassen en een verminderde ecologische voetafdruk.</li>
+        <li>Langere levensduur: Efficiënte apparaten hebben vaak een langere levensduur en vereisen minder onderhoud, waardoor ze kostenbesparend zijn op de lange termijn.</li>
+        <li>Lokale energiebronnen: Ze verminderen de afhankelijkheid van fossiele brandstoffen en stimuleren het gebruik van hernieuwbare energiebronnen.</li>
+        <li>Verbetert het comfort: Energie-efficiënte verwarmings- en koelsystemen bieden een consistentere en comfortabelere binnentemperatuur.</li>
+    </ul>
+
+    <h2>Toepassingen</h2>
+    <p>Energie-efficiënte apparaten worden op verschillende gebieden toegepast:</p>
+    <ol>
+        <li>Thuis: Huishoudelijke apparaten zoals koelkasten, wasmachines, vaatwassers en verlichtingssystemen kunnen energie-efficiënter worden gemaakt.</li>
+        <li>Industrie: Productieprocessen en industriële machines kunnen worden geoptimaliseerd om energie te besparen.</li>
+        <li>Vervoer: Efficiëntere motoren en brandstofsystemen verminderen het brandstofverbruik van voertuigen.</li>
+        <li>Kantoren en commerciële gebouwen: Energie-efficiënte HVAC-systemen, verlichting en computers verminderen het energieverbruik in zakelijke omgevingen.</li>
+        <li>Duurzame energie: Energie-efficiënte omvormers en regelsystemen worden gebruikt in zonne- en windenergiesystemen om energieverliezen te minimaliseren.</li>
+    </ol>
+
+    <h2>Conclusie</h2>
+    <p>Energie-efficiënte apparaten spelen een cruciale rol in het realiseren van een duurzamere toekomst. Ze bieden talrijke voordelen, variërend van kostenbesparingen tot milieubescherming en verbeterd comfort. Het bevorderen van de ontwikkeling en het gebruik van energie-efficiënte technologieën is essentieel om onze energiebehoeften te beheren en de negatieve effecten van klimaatverandering te verminderen. Het is van groot belang dat consumenten, bedrijven en beleidsmakers samenwerken om de adoptie van deze apparaten te bevorderen en een meer duurzame wereld te creëren.</p>
+    </div>
+    <div id="content2" class="content" style="display:none;">
+          <h1>Inleiding</h1>
+    <p>Een slimme thermostaat is een geavanceerd verwarmings- en koelsysteem dat is ontworpen om het energieverbruik te optimaliseren en tegelijkertijd het comfort in huis te verbeteren. In dit rapport zullen we de werking, voordelen en toepassingen van slimme thermostaten onderzoeken.</p>
+
+    <h2>Definitie en Werking</h2>
+    <p>Een slimme thermostaat is een elektronisch apparaat dat de temperatuur in een gebouw kan regelen en programmeren op basis van vooraf ingestelde schema's en/of via externe bediening via een smartphone of computer. Deze thermostaten maken gebruik van sensoren, wifi-connectiviteit en geavanceerde algoritmen om het energieverbruik te optimaliseren.</p>
+    <p>De werking van een slimme thermostaat omvat:</p>
+    <ol>
+        <li>Sensoren: De thermostaat detecteert de huidige temperatuur in huis.</li>
+        <li>Programmering: Gebruikers kunnen schema's instellen voor verwarming en koeling op basis van hun voorkeuren.</li>
+        <li>Automatische aanpassing: De thermostaat past het verwarmings- en koelsysteem aan om energie te besparen, bijvoorbeeld door de temperatuur te verlagen wanneer niemand thuis is.</li>
+        <li>Externe bediening: Gebruikers kunnen de thermostaat op afstand bedienen via een app op hun smartphone.</li>
+    </ol>
+
+    <h2>Voordelen van Slimme Thermostaten</h2>
+    <p>De voordelen van slimme thermostaten zijn aanzienlijk en omvatten onder andere:</p>
+    <ul>
+        <li>Energiebesparing: Slimme thermostaten optimaliseren het energieverbruik, wat resulteert in lagere energierekeningen.</li>
+        <li>Comfort: Ze zorgen voor een consistente en gepersonaliseerde binnentemperatuur.</li>
+        <li>Flexibiliteit: Gebruikers kunnen de thermostaat op afstand bedienen en de instellingen aanpassen aan veranderende behoeften.</li>
+        <li>Levensduur van apparaten: Minder onnodig verwarmen en koelen kan de levensduur van HVAC-systemen verlengen.</li>
+    </ul>
+
+    <h2>Toepassingen</h2>
+    <p>Slimme thermostaten worden gebruikt in verschillende toepassingen:</p>
+    <ol>
+        <li>Woningen: Huiseigenaren installeren slimme thermostaten om hun verwarmings- en koelsystemen te optimaliseren.</li>
+        <li>Commerciële gebouwen: Bedrijven gebruiken deze thermostaten om energie te besparen in kantoren, winkels en andere commerciële ruimtes.</li>
+        <li>Industrie: Grote industrieën implementeren geavanceerde thermostaatregelsystemen om processen te regelen en energiekosten te verlagen.</li>
+    </ol>
+
+    <h2>Conclusie</h2>
+    <p>Slimme thermostaten spelen een essentiële rol in het bevorderen van energie-efficiëntie en comfort in huizen en gebouwen. Ze bieden voordelen zoals energiebesparing en flexibele bediening, waardoor ze een waardevolle aanvulling zijn op moderne verwarmings- en koelsystemen. Het bevorderen van het gebruik van slimme thermostaten kan helpen om de impact van klimaatverandering te verminderen en de kosten voor energieconsumptie te verlagen.</p>
+    </div>
+    <div id="content3" class="content" style="display:none;">
+           <h1>Inleiding</h1>
+    <p>Waterbesparende voorzieningen zijn technologieën en apparaten die zijn ontworpen om efficiënter om te gaan met watergebruik, wat resulteert in zowel lagere waterrekeningen als een verminderde belasting van onze zoetwaterbronnen. In dit rapport zullen we de werking, voordelen en toepassingen van waterbesparende voorzieningen onderzoeken.</p>
+
+    <h2>Definitie en Werking</h2>
+    <p>Waterbesparende voorzieningen omvatten een breed scala aan apparaten en systemen die het waterverbruik verminderen zonder afbreuk te doen aan de gewenste functionaliteit. Ze maken gebruik van verschillende technologieën om water te besparen, zoals:</p>
+    <ol>
+        <li>Laag doorstromende kranen en douchekoppen: Verminderen de waterstroom zonder het comfort te verminderen.</li>
+        <li>Waterbesparende toiletten: Gebruiken minder water per spoeling en hebben vaak dubbele spoelopties.</li>
+        <li>Druppelirrigatiesystemen: Leveren water direct aan plantenwortels met minimale verspilling.</li>
+        <li>Regenwateropvangsystemen: Verzamelen en hergebruiken regenwater voor landschapsirrigatie.</li>
+    </ol>
+
+    <h2>Voordelen van Waterbesparende Voorzieningen</h2>
+    <p>De voordelen van waterbesparende voorzieningen zijn zowel economisch als ecologisch van aard:</p>
+    <ul>
+        <li>Lagere waterrekeningen: Huishoudens en bedrijven besparen geld op hun waterrekeningen.</li>
+        <li>Conservering van zoetwaterbronnen: Minder waterverbruik draagt bij aan het behoud van schaarse zoetwaterbronnen.</li>
+        <li>Minder belasting van rioleringssystemen: Een lager waterverbruik vermindert de druk op rioleringen en zuiveringsinstallaties.</li>
+        <li>Milieubescherming: Minder waterpompen en -zuivering leiden tot minder energieverbruik en lagere koolstofemissies.</li>
+    </ul>
+
+    <h2>Toepassingen</h2>
+    <p>Waterbesparende voorzieningen worden toegepast in verschillende contexten:</p>
+    <ol>
+        <li>Thuis: Huiseigenaren installeren waterbesparende kranen, toiletten en irrigatiesystemen om water te besparen.</li>
+        <li>Commercieel: Bedrijven implementeren waterbesparende voorzieningen in kantoren, hotels en restaurants.</li>
+        <li>Landbouw: Boeren gebruiken efficiënte irrigatiemethoden om waterverbruik in de landbouw te verminderen.</li>
+        <li>Industrieel: Fabrieken en productiebedrijven implementeren waterrecycling en hergebruiksystemen.</li>
+    </ol>
+
+    <h2>Conclusie</h2>
+    <p>Waterbesparende voorzieningen zijn cruciaal voor het behoud van onze watervoorraden en het verminderen van waterverspilling. Ze bieden voordelen op zowel financieel als milieugebied en zijn essentieel voor een duurzamere toekomst. Door de implementatie van waterbesparende voorzieningen kunnen we onze waterbronnen beschermen en tegelijkertijd kosten besparen.</p>
+    </div>
+    <div id="content4" class="content" style="display:none;">
+            <h1>Inleiding</h1>
+    <p>Luchtzuiverende planten zijn plantensoorten die de luchtkwaliteit in een binnenomgeving kunnen verbeteren door schadelijke chemicaliën en verontreinigende stoffen uit de lucht te verwijderen. In dit rapport zullen we de werking, voordelen en toepassingen van luchtzuiverende planten onderzoeken.</p>
+
+    <h2>Definitie en Werking</h2>
+    <p>Luchtzuiverende planten zijn planten die specifieke chemicaliën, zoals formaldehyde, benzeen en trichloorethyleen, uit de lucht kunnen absorberen en afbreken. Ze gebruiken deze chemicaliën als voedingsstoffen en produceren zuurstof als bijproduct. Deze planten kunnen de luchtkwaliteit verbeteren en de concentraties van schadelijke stoffen verminderen.</p>
+    <p>Enkele veel voorkomende luchtzuiverende planten zijn onder andere:</p>
+    <ul>
+        <li>Sansevieria (Snake Plant)</li>
+        <li>Gerbera Daisy</li>
+        <li>Pothos</li>
+        <li>Lepelplant (Peace Lily)</li>
+        <li>Bamboepalm (Bamboo Palm)</li>
+    </ul>
+
+    <h2>Voordelen van Luchtzuiverende Planten</h2>
+    <p>De voordelen van luchtzuiverende planten zijn zowel gezondheids- als milieuvoordelen:</p>
+    <ul>
+        <li>Verbeterde luchtkwaliteit: Ze verminderen de concentraties van schadelijke stoffen in de lucht, wat kan bijdragen aan een gezondere binnenomgeving.</li>
+        <li>Stressvermindering: Het aanwezig zijn van planten kan stress verminderen en een gevoel van welzijn bevorderen.</li>
+        <li>Verhoogde productiviteit: Planten kunnen de concentratie en productiviteit op de werkplek verhogen.</li>
+        <li>Esthetische waarde: Ze dragen bij aan de esthetische waarde van binnenruimtes door groen en levendigheid toe te voegen.</li>
+    </ul>
+
+    <h2>Toepassingen</h2>
+    <p>Luchtzuiverende planten worden gebruikt in verschillende omgevingen:</p>
+    <ol>
+        <li>Thuis: Ze worden binnenshuis geplaatst om de luchtkwaliteit te verbeteren en een natuurlijke sfeer te creëren.</li>
+        <li>Kantoren: Ze worden op kantoorwerkplekken geplaatst om het welzijn van medewerkers te verbeteren en de luchtkwaliteit te optimaliseren.</li>
+        <li>Gezondheidszorg: Ze worden in ziekenhuizen en zorginstellingen gebruikt om een rustgevende omgeving te bieden en de luchtkwaliteit te verbeteren.</li>
+        <li>Openbare ruimtes: Sommige openbare gebouwen en luchthavens gebruiken luchtzuiverende planten om een gezondere binnenomgeving te creëren voor bezoekers.</li>
+    </ol>
+
+    <h2>Conclusie</h2>
+    <p>Luchtzuiverende planten bieden een natuurlijke en effectieve manier om de luchtkwaliteit te verbeteren en het welzijn van mensen te bevorderen. Ze dragen bij aan zowel de fysieke gezondheid als de emotionele gemoedstoestand van mensen in binnenruimtes. Het gebruik van luchtzuiverende planten is een eenvoudige en kosteneffectieve manier om de levenskwaliteit te verbeteren en een groenere binnenomgeving te creëren.</p>
+    </div>
+    <div id="content5" class="content" style="display:none;">
+            <h1>Inleiding</h1>
+    <p>Groene stroom, ook bekend als hernieuwbare energie, verwijst naar elektriciteit die wordt opgewekt uit duurzame en milieuvriendelijke bronnen. In dit rapport zullen we de definitie, voordelen en toepassingen van groene stroom onderzoeken.</p>
+
+    <h2>Definitie en Werking</h2>
+    <p>Groene stroom wordt opgewekt uit hernieuwbare energiebronnen zoals zonne-energie, windenergie, waterkracht, biomassa en geothermische energie. Deze bronnen zijn duurzaam omdat ze zichzelf regenereren en geen schadelijke bijproducten of broeikasgassen produceren tijdens de elektriciteitsopwekking.</p>
+    <p>De werking van groene stroom omvat het gebruik van technologieën zoals zonnepanelen, windturbines, waterkrachtcentrales, biogasinstallaties en geothermische installaties om elektriciteit op te wekken uit hernieuwbare bronnen.</p>
+
+    <h2>Voordelen van Groene Stroom</h2>
+    <p>De voordelen van groene stroom zijn zowel ecologisch als sociaal-economisch van aard:</p>
+    <ul>
+        <li>Vermindering van broeikasgasemissies: Groene stroom vermindert de uitstoot van koolstofdioxide en draagt bij aan de strijd tegen klimaatverandering.</li>
+        <li>Gebruik van hernieuwbare bronnen: Het bevordert het gebruik van duurzame en onuitputtelijke energiebronnen.</li>
+        <li>Lokale economische groei: De ontwikkeling van groene energieprojecten creëert banen en bevordert lokale economieën.</li>
+        <li>Energieonafhankelijkheid: Het vermindert de afhankelijkheid van fossiele brandstoffen en import van energie.</li>
+    </ul>
+
+    <h2>Toepassingen</h2>
+    <p>Groene stroom wordt gebruikt in verschillende toepassingen en sectoren:</p>
+    <ol>
+        <li>Elektriciteitsnetten: Groene stroom wordt geïntegreerd in het reguliere elektriciteitsnet en geleverd aan huishoudens en bedrijven.</li>
+        <li>Transport: Elektrische voertuigen gebruiken groene stroom als schone en hernieuwbare energiebron.</li>
+        <li>Industrie: Bedrijven gebruiken groene stroom om hun operationele uitstoot te verminderen en te voldoen aan duurzaamheidsdoelen.</li>
+        <li>Openbare voorzieningen: Groene stroom wordt gebruikt voor straatverlichting en openbare gebouwen om de ecologische voetafdruk te verkleinen.</li>
+    </ol>
+
+    <h2>Conclusie</h2>
+    <p>Groene stroom speelt een cruciale rol in de overgang naar een duurzamere energievoorziening. Het biedt aanzienlijke voordelen voor het milieu, de economie en de samenleving als geheel. Het stimuleert de ontwikkeling van schone energietechnologieën en draagt bij aan het verminderen van de negatieve impact van fossiele brandstoffen op het milieu. Het gebruik van groene stroom is een belangrijke stap naar een schone en duurzame energietoekomst.</p>
+    </div>
+</section>
+
+
+
+        <!-- Voeg meer tips toe op dezelfde manier -->
+    </section>
+   
+    <footer class="site-footer">
+        <p>&copy; 2024 Eco-Actief. Alle rechten voorbehouden.</p>
+        <ul class="footer-links">
+            <li><a href="privacybeleid.html">Privacybeleid</a></li>
+            <li><a href="gebruikers.html">Gebruiksvoorwaarden</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </footer>
+	<script>
+function showContent(id) {
+    // Verberg alle inhoud en verwijder de actieve klasse
+    var contents = document.getElementsByClassName('content');
+    var imageBoxes = document.getElementsByClassName('image-box');
+    for (var i = 0; i < contents.length; i++) {
+        contents[i].style.display = 'none';
+        imageBoxes[i].classList.remove('active');
+    }
+
+    // Toon de geselecteerde inhoud en voeg de actieve klasse toe
+    document.getElementById(id).style.display = 'block';
+    document.querySelector("[data-content='" + id + "']").classList.add('active');
+}
+</script>
+</body>
+</html>

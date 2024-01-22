@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <title>Nieuwe Pagina - Eco-Actief</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .header {
+            background: url('header.jpg') no-repeat center center/cover;
+            color: #fff;
+            padding: 50px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 3.5em;
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #a4d4ae;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .header {
+                padding: 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .header h1 {
+                font-size: 1.5em;
+            }
+        }
+
+        .site-footer {
+            background-color: #93846f;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9em;
+        }
+
+        .site-footer p {
+            margin: 0;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .footer-links li {
+            margin: 0 10px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #a4d4ae;
+        }
+
+        @media (max-width: 768px) {
+            .footer-links {
+                flex-direction: column;
+            }
+
+            .footer-links li {
+                margin-bottom: 10px;
+            }
+        }
+
+        .tip-list-container {
+            padding: 20px;
+        }
+
+        .tip {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+            padding: 15px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .tip h3 {
+            color: #32612D;
+            margin-bottom: 5px;
+        }
+
+        .tip p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .tip:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            .tip-list-container {
+                padding: 10px;
+            }
+
+            .tip {
+                padding: 10px;
+            }
+        }
+.image-container {
+    display: flex;
+    justify-content: space-around; /* Zorgt voor gelijke ruimte rondom de afbeeldingen */
+    flex-wrap: wrap; /* Zorgt ervoor dat afbeeldingen indien nodig naar de volgende regel gaan */
+    margin: 0 -10px; /* Compenseert voor de padding aan de buitenkant */
+}
+
+.image-box {
+    width: 18%; /* Verkleint de breedte iets om ruimte te maken voor marges */
+    position: relative;
+    padding: 10px; /* Voegt ruimte rondom elke afbeelding toe */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Voegt een subtiele schaduw toe */
+}
+
+.image-box img {
+    width: 100%; /* Zorgt ervoor dat de afbeelding zich aanpast aan de breedte van de .image-box */
+    height: auto; /* Behoudt de beeldverhouding */
+    border-radius: 8px; /* Maakt de hoeken van de afbeeldingen rond */
+}
+
+@media (max-width: 768px) {
+    .image-box {
+        width: 48%; /* Maakt afbeeldingen groter op kleinere schermen */
+    }
+}
+
+.image-text {
+    position: absolute;
+    color: white;
+    font-size: 1em;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 5px;
+}
+.image-box.active {
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.6); /* Groene schaduw voor het benadrukken */
+    transform: scale(1.05); /* Maakt de afbeelding iets groter */
+}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Eco-Actief - Buitenshuis</h1>
+        <nav class="nav-menu">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                 <li><a href="nieuws.html">Nieuws</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="overons.html">Over Ons</a></li>
+            </ul>
+        </nav>
+    </header>
+	
+	
+<section class="image-section">
+    <!-- Afbeelding en tekst containers -->
+    <div class="image-container">
+        <!-- Afbeelding 1 -->
+        <div class="image-box" data-content="content1" onclick="showContent('content1')">
+            <img src="fiets.jpg" alt="Image 1">
+            <div class="image-text">Milieuvriendelijk Vervoer</div>
+        </div>
+
+        <!-- Afbeelding 2 -->
+        <div class="image-box" data-content="content2" onclick="showContent('content2')">
+            <img src="zonne.jpg" alt="Image 2">
+            <div class="image-text">Zonne-Energie</div>
+        </div>
+
+        <!-- Afbeelding 3 -->
+        <div class="image-box" data-content="content3" onclick="showContent('content3')">
+            <img src="duurzaam.jpg" alt="Image 3">
+            <div class="image-text">Duurzame Materialen</div>
+        </div>
+
+        <!-- Afbeelding 4 -->
+        <div class="image-box" data-content="content4" onclick="showContent('content4')">
+            <img src="regen.jpg" alt="Image 4">
+            <div class="image-text">Regenwater Opvangen</div>
+        </div>
+
+        <!-- Afbeelding 5 -->
+        <div class="image-box" data-content="content5" onclick="showContent('content5')">
+            <img src="muur.jpg" alt="Image 5">
+            <div class="image-text">Isoleren en Verzegelen Huis</div>
+        </div>
+    </div>
+
+    <!-- Inhoud voor elke afbeelding -->
+    <div id="content1" class="content" style="display:none;">
+            <h1>Inleiding</h1>
+    <p>Milieuvriendelijk vervoer verwijst naar transportmethoden en voertuigen die zijn ontworpen om de negatieve impact op het milieu te verminderen. In dit rapport zullen we de definitie, voordelen en toepassingen van milieuvriendelijk vervoer onderzoeken.</p>
+
+    <h2>Definitie en Werking</h2>
+    <p>Milieuvriendelijk vervoer omvat verschillende vormen van transport die minder schadelijk zijn voor het milieu dan conventionele vervoermiddelen. Dit omvat onder andere:</p>
+    <ol>
+        <li>Elektrische voertuigen (EV's): Voertuigen die worden aangedreven door elektriciteit en geen uitstoot van schadelijke gassen produceren tijdens het rijden.</li>
+        <li>Hybride voertuigen: Voertuigen die zowel een verbrandingsmotor als een elektrische motor hebben om het brandstofverbruik te verminderen.</li>
+        <li>Openbaar vervoer: Efficiënte en milieuvriendelijke vormen van openbaar vervoer, zoals bussen en treinen.</li>
+        <li>Fietsen en lopen: Het gebruik van de fiets of het te voet gaan als milieuvriendelijke vervoersalternatieven.</li>
+    </ol>
+
+    <h2>Voordelen van Milieuvriendelijk Vervoer</h2>
+    <p>Milieuvriendelijk vervoer biedt talrijke voordelen voor zowel het milieu als de samenleving:</p>
+    <ul>
+        <li>Vermindering van luchtvervuiling: Voertuigen zonder uitlaatgassen verminderen de luchtverontreiniging en de gezondheidsrisico's voor mensen.</li>
+        <li>Klimaatverandering: Het gebruik van schone energiebronnen voor milieuvriendelijk vervoer draagt bij aan het verminderen van broeikasgasemissies.</li>
+        <li>Brandstofefficiëntie: Milieuvriendelijke voertuigen zijn vaak brandstofefficiënter en kunnen de brandstofkosten verminderen.</li>
+        <li>Vermindering van congestie: Het gebruik van openbaar vervoer en carpooling kan de verkeerscongestie verminderen en de reistijd verkorten.</li>
+    </ul>
+
+    <h2>Toepassingen</h2>
+    <p>Milieuvriendelijk vervoer wordt toegepast in verschillende sectoren en situaties:</p>
+    <ol>
+        <li>Stedelijke mobiliteit: Elektrische bussen, trams en fietsdelen worden in stedelijke gebieden gebruikt om de mobiliteit te verbeteren en de uitstoot te verminderen.</li>
+        <li>Persoonlijk vervoer: Elektrische auto's, hybride voertuigen en fietsen worden steeds vaker gebruikt als persoonlijke vervoermiddelen.</li>
+        <li>Logistiek en transport: Elektrische vrachtwagens en lichte bedrijfsvoertuigen worden ingezet voor milieuvriendelijke goederentransporten.</li>
+        <li>Openbaar vervoer: Efficiënte en elektrische treinen en bussen bieden duurzame transportopties voor grote aantallen passagiers.</li>
+    </ol>
+
+    <h2>Conclusie</h2>
+    <p>Milieuvriendelijk vervoer is essentieel voor het verminderen van de impact van de transportsector op het milieu en draagt bij aan het behoud van de planeet. Het biedt een breed scala aan voordelen, waaronder schone lucht, verminderde uitstoot van broeikasgassen en brandstofefficiëntie. Het bevorderen van milieuvriendelijk vervoer is van groot belang voor een duurzamere toekomst.</p>
+        <!-- Je kunt hier meer afbeeldingen toevoegen -->
+    </div>
+    <div id="content2" class="content" style="display:none;">
+            <h1>Inleiding</h1>
+    <p>Zonne-energie is een vorm van hernieuwbare energie die wordt opgewekt door het gebruik van zonlicht. In dit rapport zullen we de definitie, voordelen en toepassingen van zonne-energie onderzoeken.</p>
+
+    <h2>Definitie en Werking</h2>
+    <p>Zonne-energie maakt gebruik van zonnepanelen, ook wel fotovoltaïsche panelen genoemd, om zonlicht om te zetten in elektriciteit. Deze panelen bevatten fotovoltaïsche cellen die fotonen van zonlicht absorberen en elektrische stroom genereren via het fotovoltaïsche effect. De opgewekte elektriciteit kan vervolgens worden gebruikt voor verschillende toepassingen, zoals verlichting, verwarming en het aandrijven van elektrische apparaten.</p>
+
+    <h2>Voordelen van Zonne-energie</h2>
+    <p>Zonne-energie biedt talrijke voordelen, zowel op het gebied van energieproductie als op milieugebied:</p>
+    <ul>
+        <li>Onuitputtelijke energiebron: Zonlicht is overvloedig en hernieuwbaar, wat betekent dat zonne-energiebronnen niet opraken.</li>
+        <li>Nul uitstoot: Zonne-energieopwekking produceert geen schadelijke emissies of broeikasgassen, waardoor het bijdraagt aan de strijd tegen klimaatverandering.</li>
+        <li>Lage operationele kosten: Zodra zonnepanelen zijn geïnstalleerd, zijn de operationele kosten minimaal, wat resulteert in lagere energiekosten.</li>
+        <li>Netto-metering: Overschot aan opgewekte elektriciteit kan terug worden gevoed naar het elektriciteitsnet, wat leidt tot extra besparingen.</li>
+    </ul>
+
+    <h2>Toepassingen</h2>
+    <p>Zonne-energie wordt op diverse manieren toegepast en geïntegreerd:</p>
+    <ol>
+        <li>Residentiële zonne-energie: Huiseigenaren installeren zonnepanelen op hun daken om hun huishoudelijke elektriciteit op te wekken.</li>
+        <li>Commerciële en industriële zonne-energie: Bedrijven en industrieën implementeren grootschalige zonnepanelen om in hun energiebehoeften te voorzien.</li>
+        <li>Zonne-energiecentrales: Grote zonneparken of zonne-energiecentrales leveren elektriciteit aan gemeenschappen en elektriciteitsnetten.</li>
+        <li>Off-grid systemen: In afgelegen gebieden waar geen toegang is tot het elektriciteitsnet, worden off-grid zonne-energiesystemen gebruikt om elektriciteit te verschaffen.</li>
+    </ol>
+
+    <h2>Conclusie</h2>
+    <p>Zonne-energie is een krachtige en duurzame bron van elektriciteit die aanzienlijke voordelen biedt voor zowel individuen als de samenleving als geheel. Het gebruik van zonne-energie draagt bij aan het verminderen van de afhankelijkheid van fossiele brandstoffen en het verminderen van de uitstoot van broeikasgassen. Het bevorderen van zonne-energie is van groot belang voor een schone en duurzame energietoekomst.</p>
+    </div>
+    <div id="content3" class="content" style="display:none;">
+            <h1>Inleiding</h1>
+    <p>Duurzame materialen zijn materialen die worden geproduceerd en gebruikt op een manier die de negatieve impact op het milieu minimaliseert en bijdraagt aan een meer duurzame en verantwoorde productieketen. In dit rapport zullen we de definitie, voordelen en toepassingen van duurzame materialen onderzoeken.</p>
+
+    <h2>Definitie en Eigenschappen</h2>
+    <p>Duurzame materialen worden gekenmerkt door hun vermogen om lang mee te gaan, hergebruikt te worden en/of recyclebaar te zijn. Ze kunnen worden gewonnen, geproduceerd en gebruikt met minimale schade aan het milieu en de natuurlijke hulpbronnen. Enkele voorbeelden van duurzame materialen zijn gerecycled glas, bamboe, biologisch katoen, gerecycled staal en FSC-gecertificeerd hout.</p>
+
+    <h2>Voordelen van Duurzame Materialen</h2>
+    <p>Het gebruik van duurzame materialen biedt talrijke voordelen voor het milieu, de economie en de samenleving:</p>
+    <ul>
+        <li>Verkleining van de ecologische voetafdruk: Duurzame materialen helpen de uitputting van natuurlijke hulpbronnen te verminderen en verminderen afval en vervuiling.</li>
+        <li>Energie-efficiëntie: Veel duurzame materialen vereisen minder energie voor hun productie, wat leidt tot lagere energiekosten en verminderde broeikasgasemissies.</li>
+        <li>Gezonde leefomgeving: Duurzame materialen zijn vaak minder giftig en dragen bij aan een gezondere binnenomgeving.</li>
+        <li>Lange levensduur: Duurzame materialen hebben de neiging langer mee te gaan en vereisen minder vervanging, wat kosten bespaart op de lange termijn.</li>
+    </ul>
+
+    <h2>Toepassingen</h2>
+    <p>Duurzame materialen worden gebruikt in verschillende toepassingen en sectoren:</p>
+    <ol>
+        <li>Bouw en architectuur: Duurzame materialen worden gebruikt voor de bouw van groene gebouwen en milieuvriendelijke constructies.</li>
+        <li>Kleding en textiel: Biologisch katoen en gerecyclede vezels worden gebruikt voor duurzame kledingproductie.</li>
+        <li>Verpakking: Milieuvriendelijke verpakkingsmaterialen verminderen de hoeveelheid afval en de milieu-impact van verpakkingen.</li>
+        <li>Automobielindustrie: Automakers gebruiken duurzame materialen in auto-interieurs en carrosserieën om brandstofefficiëntie te verbeteren.</li>
+    </ol>
+
+    <h2>Conclusie</h2>
+    <p>Duurzame materialen spelen een cruciale rol in het bevorderen van duurzaamheid en milieubewustzijn. Door het gebruik van deze materialen kunnen we de impact van productie en consumptie verminderen en een meer verantwoorde benadering van materialengebruik aannemen. Het bevorderen van duurzame materialen is van essentieel belang voor een duurzamere en ecologisch vriendelijkere toekomst.</p>
+    </div>
+    <div id="content4" class="content" style="display:none;">
+            <h1>Inleiding</h1>
+    <p>Regenwateropvang verwijst naar het verzamelen en opslaan van regenwater dat op daken en oppervlakken valt. Dit water kan later worden gebruikt voor verschillende doeleinden, waaronder landschapsirrigatie, toiletspoeling en zelfs drinkwater in sommige gevallen. In dit rapport zullen we de definitie, voordelen en toepassingen van regenwateropvang onderzoeken.</p>
+
+    <h2>Definitie en Werking</h2>
+    <p>Regenwateropvang omvat het installeren van systemen zoals regenwateropvangtanks, goten en leidingen om regenwater op te vangen en naar een opslagplaats te leiden. Dit water wordt gefilterd en behandeld voordat het wordt gebruikt, afhankelijk van het beoogde gebruik. Regenwateropvang kan worden toegepast op zowel residentiële als commerciële gebouwen en biedt een duurzaam alternatief voor het gebruik van kostbaar leidingwater.</p>
+
+    <h2>Voordelen van Regenwateropvang</h2>
+    <p>Het gebruik van regenwateropvang biedt diverse voordelen, zowel ecologisch als economisch:</p>
+    <ul>
+        <li>Waterbesparing: Het gebruik van regenwater vermindert de afhankelijkheid van leidingwater, waardoor er meer drinkwater beschikbaar blijft voor essentiële toepassingen.</li>
+        <li>Milieuvriendelijk: Regenwateropvang vermindert de vraag naar energie-intensieve waterzuiveringsprocessen en minimaliseert waterverlies door verdamping en lekkage in traditionele watervoorzieningssystemen.</li>
+        <li>Kostenbesparing: Huishoudens en bedrijven kunnen geld besparen op hun waterrekeningen door regenwater te gebruiken voor niet-drinkwater toepassingen zoals irrigatie en toiletspoeling.</li>
+        <li>Overstromingsbeheer: Het afvoeren van regenwater naar het rioolstelsel kan overstromingen verminderen en helpen bij het reguleren van het waterpeil.</li>
+    </ul>
+
+    <h2>Toepassingen</h2>
+    <p>Regenwateropvang wordt gebruikt in verschillende toepassingen en sectoren:</p>
+    <ol>
+        <li>Residentiële regenwateropvang: Huishoudens installeren systemen om regenwater te gebruiken voor het besproeien van tuinen, het wassen van auto's en zelfs het doorspoelen van toiletten.</li>
+        <li>Commerciële en industriële toepassingen: Bedrijven implementeren regenwateropvangsystemen voor diverse doeleinden, waaronder koelingsprocessen, landschapsirrigatie en brandbestrijding.</li>
+        <li>Landbouw: Boeren gebruiken regenwater voor gewasirrigatie, wat kan helpen bij het verminderen van de druk op zoetwaterbronnen.</li>
+        <li>Stedelijke planning: Regenwateropvang kan worden geïntegreerd in stedelijke planning om de duurzaamheid van de watervoorziening te verbeteren en overstromingen te voorkomen.</li>
+    </ol>
+
+    <h2>Conclusie</h2>
+    <p>Regenwateropvang is een duurzame praktijk die bijdraagt aan het verminderen van de druk op zoetwaterbronnen en het bevorderen van waterbesparing. Het biedt zowel economische voordelen als milieuvoordelen door de afhankelijkheid van leidingwater te verminderen en de impact van traditionele watervoorzieningssystemen te verminderen. Het bevorderen van regenwateropvang is essentieel voor een duurzamere benadering van watergebruik.</p>
+    </div>
+    <div id="content5" class="content" style="display:none;">
+            <h1>Inleiding</h1>
+    <p>De isolatie en verzegeling van een huis zijn cruciale maatregelen om energie-efficiëntie te verbeteren, comfort te verhogen en energiekosten te verlagen. In dit rapport zullen we de definitie, voordelen en toepassingen van isolatie en verzegeling van een huis onderzoeken.</p>
+
+    <h2>Definitie en Doel</h2>
+    <p>Isolatie verwijst naar het gebruik van materialen om warmteverlies en warmteoverdracht te verminderen, terwijl verzegeling betrekking heeft op het dichten van luchtlekken en kieren in een huis om ongewenste luchtstromen te voorkomen. Samen zorgen deze maatregelen ervoor dat een huis beter geïsoleerd en luchtdicht wordt, wat resulteert in een comfortabelere en energiezuinigere leefomgeving.</p>
+
+    <h2>Voordelen van Isolatie en Verzegeling</h2>
+    <p>De isolatie en verzegeling van een huis bieden tal van voordelen, zowel op het gebied van energie-efficiëntie als comfort:</p>
+    <ul>
+        <li>Energiebesparing: Goede isolatie en verzegeling verminderen de behoefte aan verwarming en koeling, wat resulteert in lagere energiekosten.</li>
+        <li>Comfortverbetering: Een goed geïsoleerd en luchtdicht huis heeft stabielere temperaturen en minder tocht, wat het comfort verhoogt.</li>
+        <li>Verlaging van de ecologische voetafdruk: Energiebesparing vermindert de uitstoot van broeikasgassen en draagt bij aan milieubescherming.</li>
+        <li>Verbeterde luchtkwaliteit: Het verminderen van luchtlekken kan de infiltratie van allergenen, stof en verontreinigende stoffen verminderen.</li>
+    </ul>
+
+    <h2>Toepassingen</h2>
+    <p>Isolatie en verzegeling worden op verschillende manieren toegepast in huizen en gebouwen:</p>
+    <ol>
+        <li>Dakisolatie: Isolatie in het dak vermindert warmteverlies en houdt een woning warm in de winter en koel in de zomer.</li>
+        <li>Spouwmuurisolatie: Het isoleren van de spouwmuur tussen binnen- en buitenmuren verbetert de thermische prestaties van een huis.</li>
+        <li>Vloerisolatie: Het isoleren van vloeren helpt koude lucht vanuit de kruipruimte te voorkomen en verhoogt de vloertemperatuur.</li>
+        <li>Luchtlekdichting: Het afdichten van kieren rond ramen, deuren, leidingen en ventilatieopeningen vermindert ongecontroleerde luchtinfiltratie.</li>
+    </ol>
+
+    <h2>Conclusie</h2>
+    <p>Isolatie en verzegeling van een huis zijn fundamentele maatregelen om de energie-efficiëntie te verbeteren, comfort te verhogen en bij te dragen aan milieubescherming. Deze maatregelen zijn niet alleen kosteneffectief op de lange termijn, maar dragen ook bij aan het verminderen van de ecologische voetafdruk van huizen en gebouwen. Het bevorderen van isolatie en verzegeling is van groot belang voor een duurzamere en energie-efficiëntere toekomst.</p>
+    </div>
+</section>
+
+
+
+        <!-- Voeg meer tips toe op dezelfde manier -->
+    </section>
+   
+    <footer class="site-footer">
+        <p>&copy; 2024 Eco-Actief. Alle rechten voorbehouden.</p>
+        <ul class="footer-links">
+            <li><a href="privacybeleid.html">Privacybeleid</a></li>
+            <li><a href="gebruikers.html">Gebruiksvoorwaarden</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </footer>
+	<script>
+function showContent(id) {
+    // Verberg alle inhoud en verwijder de actieve klasse
+    var contents = document.getElementsByClassName('content');
+    var imageBoxes = document.getElementsByClassName('image-box');
+    for (var i = 0; i < contents.length; i++) {
+        contents[i].style.display = 'none';
+        imageBoxes[i].classList.remove('active');
+    }
+
+    // Toon de geselecteerde inhoud en voeg de actieve klasse toe
+    document.getElementById(id).style.display = 'block';
+    document.querySelector("[data-content='" + id + "']").classList.add('active');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <title>Nieuwe Pagina - Eco-Actief</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .header {
+            background: url('header.jpg') no-repeat center center/cover;
+            color: #fff;
+            padding: 50px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 3.5em;
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #a4d4ae;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .header {
+                padding: 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .header h1 {
+                font-size: 1.5em;
+            }
+        }
+
+        .site-footer {
+            background-color: #93846f;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9em;
+        }
+
+        .site-footer p {
+            margin: 0;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .footer-links li {
+            margin: 0 10px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #a4d4ae;
+        }
+
+        @media (max-width: 768px) {
+            .footer-links {
+                flex-direction: column;
+            }
+
+            .footer-links li {
+                margin-bottom: 10px;
+            }
+        }
+
+        .tip-list-container {
+            padding: 20px;
+        }
+
+        .tip {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+            padding: 15px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .tip h3 {
+            color: #32612D;
+            margin-bottom: 5px;
+        }
+
+        .tip p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .tip:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            .tip-list-container {
+                padding: 10px;
+            }
+
+            .tip {
+                padding: 10px;
+            }
+        }
+.image-container {
+    display: flex;
+    justify-content: space-around; /* Zorgt voor gelijke ruimte rondom de afbeeldingen */
+    flex-wrap: wrap; /* Zorgt ervoor dat afbeeldingen indien nodig naar de volgende regel gaan */
+    margin: 0 -10px; /* Compenseert voor de padding aan de buitenkant */
+}
+
+.image-box {
+    width: 18%; /* Verkleint de breedte iets om ruimte te maken voor marges */
+    position: relative;
+    padding: 10px; /* Voegt ruimte rondom elke afbeelding toe */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Voegt een subtiele schaduw toe */
+}
+
+.image-box img {
+    width: 100%; /* Zorgt ervoor dat de afbeelding zich aanpast aan de breedte van de .image-box */
+    height: auto; /* Behoudt de beeldverhouding */
+    border-radius: 8px; /* Maakt de hoeken van de afbeeldingen rond */
+}
+
+@media (max-width: 768px) {
+    .image-box {
+        width: 48%; /* Maakt afbeeldingen groter op kleinere schermen */
+    }
+}
+
+.image-text {
+    position: absolute;
+    color: white;
+    font-size: 1em;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 5px;
+}
+.image-box.active {
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.6); /* Groene schaduw voor het benadrukken */
+    transform: scale(1.05); /* Maakt de afbeelding iets groter */
+}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Eco-Actief - Binnenshuis</h1>
+        <nav class="nav-menu">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="nieuws.html">Nieuws</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="overons.html">Over Ons</a></li>
+            </ul>
+        </nav>
+    </header>
+	
+	
+<section class="image-section">
+    <!-- Afbeelding en tekst containers -->
+    <div class="image-container">
+        <!-- Afbeelding 1 -->
+        <div class="image-box" data-content="content1" onclick="showContent('content1')">
+            <img src="douche.jpg" alt="Image 1">
+            <div class="image-text">Waterbesparende douchekoppen</div>
+        </div>
+
+        <!-- Afbeelding 2 -->
+        <div class="image-box" data-content="content2" onclick="showContent('content2')">
+            <img src="schoonmaak.jpg" alt="Image 2">
+            <div class="image-text">Milieuvriendelijke schoonmaakproducten</div>
+        </div>
+
+        <!-- Afbeelding 3 -->
+        <div class="image-box" data-content="content3" onclick="showContent('content3')">
+            <img src="verwarmen.jpg" alt="Image 3">
+            <div class="image-text">Zonne-oplaadapparaten</div>
+        </div>
+
+        <!-- Afbeelding 4 -->
+        <div class="image-box" data-content="content4" onclick="showContent('content4')">
+            <img src="luier.jpg" alt="Image 4">
+            <div class="image-text">Herbruikbare luiers</div>
+        </div>
+
+        <!-- Afbeelding 5 -->
+        <div class="image-box" data-content="content5" onclick="showContent('content5')">
+            <img src="verf.jpg" alt="Image 5">
+            <div class="image-text">Eco-vriendelijke verf</div>
+        </div>
+    </div>
+
+    <!-- Inhoud voor elke afbeelding -->
+    <div id="content1" class="content" style="display:none;">
+            <h1>Inleiding</h1>
+    <p>Waterbesparende douchekoppen zijn een belangrijke innovatie om de hoeveelheid water die wordt gebruikt tijdens het douchen te verminderen. Deze douchekoppen zijn ontworpen om efficiënter om te gaan met water, zonder in te leveren op de douche-ervaring. In dit rapport zullen we de definitie, voordelen en toepassingen van waterbesparende douchekoppen onderzoeken.</p>
+
+    <h2>Definitie en Werking</h2>
+    <p>Waterbesparende douchekoppen zijn uitgerust met speciale technologieën en sproeipatronen om de waterstroom te verminderen terwijl de waterdruk behouden blijft. Dit wordt meestal bereikt door lucht in te mengen met het water, waardoor de druppels fijner worden en het gevoel van een krachtige stroom behouden blijft. Hierdoor kan een persoon genieten van een comfortabele douche-ervaring met aanzienlijk minder waterverbruik.</p>
+
+    <h2>Voordelen van Waterbesparende Douchekoppen</h2>
+    <p>Het gebruik van waterbesparende douchekoppen biedt tal van voordelen voor zowel individuen als het milieu:</p>
+    <ul>
+        <li>Waterbesparing: Deze douchekoppen verminderen het waterverbruik per douche, wat resulteert in lagere waterrekeningen en minder verspilling van kostbaar zoetwater.</li>
+        <li>Energie-efficiëntie: Minder warm water wordt gebruikt, waardoor de energie die nodig is voor het verwarmen van water wordt verminderd, wat resulteert in lagere energiekosten.</li>
+        <li>Milieuvriendelijk: Minder waterverbruik betekent minder belasting van watervoorraden en minder energie die wordt besteed aan waterbehandeling en -distributie.</li>
+        <li>Lange levensduur: Waterbesparende douchekoppen gaan vaak langer mee dan traditionele douchekoppen, wat kosten bespaart op de lange termijn.</li>
+    </ul>
+
+    <h2>Toepassingen</h2>
+    <p>Waterbesparende douchekoppen worden toegepast in verschillende huishoudens en instellingen:</p>
+    <ol>
+        <li>Thuisgebruik: Huiseigenaren installeren waterbesparende douchekoppen in hun badkamers om water en energie te besparen zonder in te boeten aan comfort.</li>
+        <li>Hotels en accommodaties: Veel hotels en vakantieverblijven gebruiken waterbesparende douchekoppen om hun ecologische voetafdruk te verminderen en kosten te verlagen.</li>
+        <li>Gemeenschappelijke ruimtes: Openbare douchefaciliteiten in sportscholen, scholen en zwembaden kunnen profiteren van waterbesparende douchekoppen om efficiënter met water om te gaan.</li>
+    </ol>
+
+    <h2>Conclusie</h2>
+    <p>Waterbesparende douchekoppen zijn een eenvoudige maar effectieve manier om water en energie te besparen zonder afbreuk te doen aan de douche-ervaring. Ze dragen bij aan waterbesparing en verminderen de impact op het milieu. Het bevorderen van het gebruik van waterbesparende douchekoppen is een belangrijke stap naar duurzamer watergebruik in onze huizen en gemeenschappen.</p>
+        <!-- Je kunt hier meer afbeeldingen toevoegen -->
+    </div>
+    <div id="content2" class="content" style="display:none;">
+            <h1>Inleiding</h1>
+    <p>Milieuvriendelijke schoonmaakproducten zijn producten die zijn ontworpen om schoonmaaktaken uit te voeren met minimale negatieve impact op het milieu. Deze producten bevatten vaak biologisch afbreekbare ingrediënten, vermijden schadelijke chemicaliën en worden geproduceerd met duurzame methoden. In dit rapport zullen we de definitie, voordelen en toepassingen van milieuvriendelijke schoonmaakproducten onderzoeken.</p>
+
+    <h2>Definitie en Kenmerken</h2>
+    <p>Milieuvriendelijke schoonmaakproducten hebben de volgende kenmerken:</p>
+    <ul>
+        <li>Biologisch afbreekbaar: De ingrediënten in deze producten breken gemakkelijk af in de natuur, wat de milieubelasting vermindert.</li>
+        <li>Vermijding van schadelijke chemicaliën: Ze vermijden vaak agressieve chemicaliën zoals chloor, ammoniak en fosfaten.</li>
+        <li>Duurzame productie: Milieuvriendelijke schoonmaakproducten worden vaak geproduceerd met duurzame methoden en verpakkingen.</li>
+        <li>Dierproefvrij: Deze producten zijn niet getest op dieren, wat bijdraagt aan dierenwelzijn.</li>
+    </ul>
+
+    <h2>Voordelen van Milieuvriendelijke Schoonmaakproducten</h2>
+    <p>Het gebruik van milieuvriendelijke schoonmaakproducten biedt tal van voordelen voor zowel individuen als het milieu:</p>
+    <ul>
+        <li>Minder milieubelasting: Biologisch afbreekbare ingrediënten verminderen de schade aan ecosystemen en waterbronnen.</li>
+        <li>Gezondere binnenlucht: Het vermijden van schadelijke chemicaliën zorgt voor een schonere en gezondere binnenlucht in huizen en gebouwen.</li>
+        <li>Veilig voor huisdieren en kinderen: Deze producten zijn doorgaans veiliger in gebruik en verminderen het risico op vergiftiging.</li>
+        <li>Ondersteuning van duurzame praktijken: Door milieuvriendelijke producten te gebruiken, ondersteunt men bedrijven die zich inzetten voor duurzaamheid.</li>
+    </ul>
+
+    <h2>Toepassingen</h2>
+    <p>Milieuvriendelijke schoonmaakproducten worden gebruikt voor diverse schoonmaaktoepassingen, waaronder:</p>
+    <ol>
+        <li>Huishoudelijke schoonmaak: Ze worden gebruikt in woningen voor het reinigen van oppervlakken, vloeren, ramen en sanitair.</li>
+        <li>Commercieel gebruik: Bedrijven, scholen en instellingen gebruiken milieuvriendelijke schoonmaakproducten voor schoonmaakdiensten.</li>
+        <li>Industriële toepassingen: In sommige sectoren worden milieuvriendelijke schoonmaakproducten gebruikt voor industriële reiniging en onderhoud.</li>
+    </ol>
+
+    <h2>Conclusie</h2>
+    <p>Milieuvriendelijke schoonmaakproducten bieden een duurzaam alternatief voor traditionele schoonmaakproducten en verminderen de impact op het milieu. Ze dragen bij aan schonere binnenlucht, verminderen de blootstelling aan schadelijke chemicaliën en ondersteunen bedrijven die zich inzetten voor duurzaamheid. Het bevorderen van het gebruik van milieuvriendelijke schoonmaakproducten is van groot belang voor een milieuvriendelijkere en gezondere wereld.</p>
+    </div>
+    <div id="content3" class="content" style="display:none;">
+            <h1>Inleiding</h1>
+    <p>Zonne-oplaadapparaten zijn draagbare apparaten die gebruikmaken van zonne-energie om elektrische energie op te wekken en op te slaan. Deze apparaten zijn ontworpen om elektronische apparaten op te laden, variërend van smartphones tot draagbare laders en zelfs kampeeruitrusting. In dit rapport zullen we de definitie, voordelen en toepassingen van zonne-oplaadapparaten onderzoeken.</p>
+
+    <h2>Definitie en Werking</h2>
+    <p>Zonne-oplaadapparaten zijn uitgerust met zonnepanelen die zonlicht absorberen en omzetten in elektrische energie. Deze energie wordt opgeslagen in interne batterijen of direct gebruikt om elektronische apparaten op te laden via USB-poorten of andere aansluitingen. Ze zijn vaak draagbaar en handig voor gebruik buitenshuis of in gebieden zonder toegang tot het elektriciteitsnet.</p>
+
+    <h2>Voordelen van Zonne-oplaadapparaten</h2>
+    <p>Het gebruik van zonne-oplaadapparaten biedt tal van voordelen, zowel voor individuen als voor het milieu:</p>
+    <ul>
+        <li>Duurzaamheid: Zonne-oplaadapparaten maken gebruik van hernieuwbare zonne-energie, wat bijdraagt aan duurzaamheid en minder afhankelijkheid van fossiele brandstoffen.</li>
+        <li>Draagbaarheid: Ze zijn draagbaar en ideaal voor gebruik in de natuur, tijdens kamperen, wandelen, reizen of in noodsituaties.</li>
+        <li>Milieuvriendelijk: Ze verminderen de behoefte aan wegwerpbatterijen en verminderen daardoor afval en milieubelasting.</li>
+        <li>Toegankelijkheid: Ze bieden stroomopwekking in afgelegen gebieden en tijdens stroomuitval, wat de toegankelijkheid tot elektriciteit vergroot.</li>
+    </ul>
+
+    <h2>Toepassingen</h2>
+    <p>Zonne-oplaadapparaten hebben diverse toepassingen en worden gebruikt voor het opladen van verschillende apparaten, waaronder:</p>
+    <ol>
+        <li>Smartphones en tablets: Ze kunnen worden gebruikt om mobiele apparaten op te laden, waardoor communicatie mogelijk blijft in afgelegen gebieden.</li>
+        <li>Draagbare laders: Deze worden vaak gebruikt als back-upstroombronnen voor onderweg.</li>
+        <li>Kampeer- en outdoor-uitrusting: Ze kunnen worden gebruikt om zaklampen, GPS-apparaten, en zelfs draagbare koelers van stroom te voorzien.</li>
+        <li>Noodvoorzieningen: Ze zijn handig tijdens noodsituaties en stroomuitval, zodat essentiële apparaten kunnen worden opgeladen.</li>
+    </ol>
+
+    <h2>Conclusie</h2>
+    <p>Zonne-oplaadapparaten zijn een duurzame en handige oplossing voor het opwekken van elektriciteit buitenshuis en in afgelegen gebieden. Ze verminderen de milieu-impact van elektriciteitsopwekking en bieden toegankelijkheid tot stroom in verschillende situaties. Het bevorderen van het gebruik van zonne-oplaadapparaten is van groot belang voor een duurzamere en beter toegankelijke energievoorziening.</p>
+    </div>
+    <div id="content4" class="content" style="display:none;">
+            <h1>Inleiding</h1>
+    <p>Herbruikbare luiers, ook wel wasbare luiers genoemd, zijn een duurzaam alternatief voor wegwerpluiers. Ze kunnen meerdere keren worden gewassen en opnieuw worden gebruikt, waardoor de hoeveelheid afval die wordt gegenereerd door wegwerpluiers aanzienlijk wordt verminderd. In dit rapport zullen we de definitie, voordelen en toepassingen van herbruikbare luiers onderzoeken.</p>
+
+    <h2>Definitie en Kenmerken</h2>
+    <p>Herbruikbare luiers worden gekenmerkt door de volgende eigenschappen:</p>
+    <ul>
+        <li>Wasbaar: Ze kunnen na gebruik worden gewassen en opnieuw worden gedragen, waardoor de behoefte aan wegwerpluiers wordt verminderd.</li>
+        <li>Herbruikbaar: Ze zijn ontworpen om meerdere keren te worden gebruikt, vaak gedurende de gehele luierperiode van een kind.</li>
+        <li>Milieuvriendelijk: Het gebruik van herbruikbare luiers vermindert de hoeveelheid afval die naar stortplaatsen gaat, wat bijdraagt aan milieubescherming.</li>
+        <li>Verstelbaar: Ze zijn vaak verstelbaar en kunnen meegroeien met de grootte van het kind, wat kostenbesparend is.</li>
+    </ul>
+
+    <h2>Voordelen van Herbruikbare Luiers</h2>
+    <p>Het gebruik van herbruikbare luiers biedt tal van voordelen voor zowel individuen als het milieu:</p>
+    <ul>
+        <li>Minder afval: Herbruikbare luiers verminderen de hoeveelheid wegwerpluierafval en de impact op stortplaatsen.</li>
+        <li>Kostenbesparing: Hoewel de initiële kosten hoger kunnen zijn, kunnen herbruikbare luiers op lange termijn geld besparen, vooral bij meerdere kinderen.</li>
+        <li>Milieuvriendelijk: Ze verminderen de productie en het gebruik van wegwerpluiers, wat bijdraagt aan duurzaamheid.</li>
+        <li>Gezonder voor de huid: Herbruikbare luiers zijn vaak gemaakt van natuurlijke materialen en kunnen de kans op huidirritatie verminderen.</li>
+    </ul>
+
+    <h2>Toepassingen</h2>
+    <p>Herbruikbare luiers worden gebruikt door ouders en verzorgers voor het verzorgen van baby's en peuters. Ze kunnen thuis worden gewassen en opnieuw worden gebruikt, en sommige kinderopvangcentra en crèches accepteren ook herbruikbare luiers.</p>
+
+    <h2>Conclusie</h2>
+    <p>Herbruikbare luiers zijn een duurzaam en kosteneffectief alternatief voor wegwerpluiers. Ze verminderen afval, besparen geld en dragen bij aan milieubescherming. Het bevorderen van het gebruik van herbruikbare luiers is van groot belang voor een duurzamere toekomst voor onze kinderen.</p>
+    </div>
+    <div id="content5" class="content" style="display:none;">
+            <h1>Inleiding</h1>
+    <p>Milieuvriendelijke verf, ook bekend als duurzame verf, is een type verf dat is ontwikkeld met aandacht voor het milieu en de gezondheid van mensen. Deze verfsoorten bevatten minder schadelijke chemicaliën en zijn vaak gemaakt met duurzame materialen. In dit rapport zullen we de definitie, voordelen en toepassingen van milieuvriendelijke verf onderzoeken.</p>
+
+    <h2>Definitie en Kenmerken</h2>
+    <p>Milieuvriendelijke verf heeft de volgende kenmerken:</p>
+    <ul>
+        <li>Lage VOC-gehaltes: Ze bevatten weinig vluchtige organische stoffen (VOC's), waardoor de schadelijke uitstoot wordt verminderd.</li>
+        <li>Natuurlijke ingrediënten: Ze kunnen natuurlijke pigmenten en bindmiddelen bevatten, wat de schadelijke impact op het milieu vermindert.</li>
+        <li>Duurzaamheid: Ze zijn ontworpen om lang mee te gaan, wat minder vaak schilderen en minder afval betekent.</li>
+        <li>Veilig voor gezondheid: Ze verminderen het risico op gezondheidsproblemen zoals hoofdpijn en allergische reacties.</li>
+    </ul>
+
+    <h2>Voordelen van Milieuvriendelijke Verf</h2>
+    <p>Het gebruik van milieuvriendelijke verf biedt tal van voordelen voor zowel individuen als het milieu:</p>
+    <ul>
+        <li>Minder schadelijk voor de gezondheid: Lage VOC-gehaltes verminderen de blootstelling aan schadelijke dampen, wat gunstig is voor de binnenluchtkwaliteit.</li>
+        <li>Milieuvriendelijk: Ze verminderen de uitstoot van schadelijke chemicaliën en verminderen de milieu-impact van de verfindustrie.</li>
+        <li>Duurzaamheid: Milieuvriendelijke verf gaat vaak langer mee, wat minder frequent schilderen en minder afval betekent.</li>
+        <li>Kwaliteit en prestaties: Ze bieden vergelijkbare of zelfs betere prestaties dan traditionele verven.</li>
+    </ul>
+
+    <h2>Toepassingen</h2>
+    <p>Milieuvriendelijke verf wordt gebruikt voor diverse toepassingen, waaronder:</p>
+    <ol>
+        <li>Binnenhuisdecoratie: Ze worden gebruikt voor het schilderen van muren, plafonds, deuren en meubels in woningen en commerciële gebouwen.</li>
+        <li>Buitenschilderwerk: Ze kunnen ook worden gebruikt voor buitentoepassingen, zoals het schilderen van gevels en houtwerk.</li>
+        <li>Kunst en ambacht: Ze worden gebruikt door kunstenaars en ambachtslieden voor schilderijen en creatieve projecten.</li>
+    </ol>
+
+    <h2>Conclusie</h2>
+    <p>Milieuvriendelijke verf is een duurzame keuze die de gezondheid en het milieu ten goede komt. Door het gebruik van deze verfsoorten te bevorderen, kunnen we bijdragen aan schonere binnenluchtkwaliteit, verminderde milieuvervuiling en een duurzamere toekomst. Het gebruik van milieuvriendelijke verf is een belangrijke stap naar een groenere en gezondere wereld.</p>
+    </div>
+</section>
+
+
+
+        <!-- Voeg meer tips toe op dezelfde manier -->
+    </section>
+   
+    <footer class="site-footer">
+        <p>&copy; 2024 Eco-Actief. Alle rechten voorbehouden.</p>
+        <ul class="footer-links">
+            <li><a href="privacybeleid.html">Privacybeleid</a></li>
+            <li><a href="gebruikers.html">Gebruiksvoorwaarden</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </footer>
+	<script>
+function showContent(id) {
+    // Verberg alle inhoud en verwijder de actieve klasse
+    var contents = document.getElementsByClassName('content');
+    var imageBoxes = document.getElementsByClassName('image-box');
+    for (var i = 0; i < contents.length; i++) {
+        contents[i].style.display = 'none';
+        imageBoxes[i].classList.remove('active');
+    }
+
+    // Toon de geselecteerde inhoud en voeg de actieve klasse toe
+    document.getElementById(id).style.display = 'block';
+    document.querySelector("[data-content='" + id + "']").classList.add('active');
+}
+</script>
+</body>
+</html>
