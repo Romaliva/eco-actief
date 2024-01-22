@@ -141,29 +141,30 @@
 }
 
 @media (max-width: 768px) {
-    .header {
-        padding: 20px;
+     .header {
         flex-direction: column;
-        text-align: center;
+        align-items: center;
+        padding: 20px;
     }
 
     .header h1 {
         font-size: 2em;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .nav-menu {
+        width: 100%;
     }
 
     .nav-links {
-        display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 20px;
+        display: block;
     }
 
     .nav-links li {
         margin: 10px 0;
-    }
-
-    .nav-links a {
-        font-size: 1em;
     }
 
     .news-card {
