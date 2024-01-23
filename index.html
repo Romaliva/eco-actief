@@ -295,12 +295,12 @@ body {
     .header {
         flex-direction: column;
         align-items: center;
+        text-align: center;
         padding: 20px;
     }
 
     .header h1 {
         font-size: 2em;
-        text-align: center;
         margin-bottom: 20px;
     }
 
@@ -311,7 +311,6 @@ body {
     .nav-links {
         flex-direction: column;
         align-items: center;
-        display: block;
     }
 
     .nav-links li {
@@ -319,15 +318,65 @@ body {
     }
 
     .choice {
-        width: 100%; /* Keuzes nemen de volledige breedte in op kleinere schermen */
+        width: 100%;
+        margin-bottom: 20px;
     }
 
-    .quiz-question, .fact-box, .tip {
-        width: 95%; /* Aanpassing voor een betere leesbaarheid */
+    .dynamic-text-section, .eco-quiz {
+        padding: 30px 10px;
     }
 
-    .dynamic-text-section, .facts-section, .eco-tips-section, .eco-quiz {
-        padding: 30px 10px; /* Aangepaste padding voor kleinere schermen */
+    .dynamic-text-section h2, .facts-section h3, .eco-tips-section h3, .eco-quiz h2 {
+        font-size: 1.8em;
+    }
+
+    .quiz-question, .fact-box {
+        width: 95%;
+        margin: 10px auto;
+    }
+
+    .start-quiz-button, .answer-button {
+        padding: 12px 25px;
+        font-size: 16px;
+    }
+	    .tip {
+        width: 92%; /* Zorgt ervoor dat de tip de volledige breedte van het scherm gebruikt */
+        margin: 10px 0; /* Voegt ruimte toe tussen de tips */
+        padding: 15px; /* Verkleint de padding voor een strakkere layout */
+    }
+
+    .tip img {
+        height: auto; /* Zorgt ervoor dat de afbeeldingen hun aspectratio behouden */
+        max-width: 100%; /* Past de breedte van de afbeelding aan om binnen het element te passen */
+    }
+
+    .tip h3 {
+        font-size: 1.5em; /* Verkleint de lettergrootte van de titels voor betere leesbaarheid */
+    }
+
+    .tip p {
+        font-size: 1em; /* Verkleint de lettergrootte van de paragrafen */
+    }
+
+    .read-more {
+        font-size: 0.9em; /* Verkleint de lettergrootte van de 'Lees meer' links */
+    }
+	    .facts-section {
+        padding: 30px 10px; /* Aanpassen van de padding voor de gehele sectie */
+    }
+
+    .fact-box {
+        width: 92%; /* Elke fact-box neemt de volle breedte in */
+        margin: 10px 0; /* Voegt ruimte toe tussen de boxen */
+        padding: 15px; /* Verkleint de padding binnen elke fact-box */
+    }
+
+    .fact-box h3 {
+        font-size: 1.5em; /* Verkleint de lettergrootte van de titels voor betere leesbaarheid */
+    }
+
+    .fact-box p {
+        font-size: 1em; /* Aanpassen van de lettergrootte van de paragrafen */
     }
 }
         
