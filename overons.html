@@ -1,9 +1,17 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html>
 <head>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5079454193521312"
      crossorigin="anonymous"></script>
-    <title>Nieuwe Pagina - Eco-Actief</title>
+    <title>index Eco-Actief</title>
+	    <!-- Basis Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Eco-Actief - Inspirerende tips en nieuws over duurzaam leven. Leer hoe je een milieuvriendelijke levensstijl kunt omarmen en bijdragen aan een groenere planeet.">
+    <meta name="keywords" content="duurzaamheid, eco-vriendelijk, groene energie, energiebesparing, milieu, duurzame leefwijze, ecologisch bewustzijn">
+    <meta name="author" content="Eco-Actief">
     <style>
 body {
     margin: 0;
@@ -53,8 +61,93 @@ body {
     color: #a4d4ae;
 }
 
-.site-footer {
-    background-color: #93846f;
+.choice-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #f4f4f4;
+    flex-wrap: wrap; /* Zorgt voor een correcte weergave op kleinere schermen */
+}
+
+.choice {
+    width: 30%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 20px; /* Extra ruimte onder elke keuze */
+}
+
+.choice img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.choice h3 {
+    margin-top: 10px;
+}
+
+.choice a {
+    color: #a4d4ae;
+    text-decoration: none;
+}
+
+.choice a:hover {
+    color: #88c9b7;
+}
+     
+			    .dynamic-text-section {
+            background: linear-gradient(135deg, #a4d4ae 30%, #88c9b7 100%);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dynamic-text-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('path-to-background-pattern.png');
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .dynamic-text-section h2 {
+            margin-top: 0;
+            font-size: 2.5em;
+        }
+
+        .dynamic-text-section p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: auto;
+        }
+
+  
+
+            .dynamic-text-section h2 {
+                font-size: 2em;
+            }
+                .facts-section {
+            background-color: #f4f4f4;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+
+
+
+	.site-footer {
+    background-color: #93846f; /* Lichtbruine kleur */
     color: white;
     text-align: center;
     padding: 20px 0;
@@ -84,32 +177,19 @@ body {
 }
 
 .footer-links a:hover {
-    color: #a4d4ae;
+    color: #a4d4ae; /* Lichte kleurverandering bij hover */
 }
-
 .about-page {
-    background-color: #f4f4f4;
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 600px;
-    margin: 0 auto;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    text-align: center; /* Center-aligns the text horizontally */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* This sets the height to 100% of the viewport height */
 }
 
-.about-page h2 {
-    color: #32612D;
-    margin-bottom: 15px;
-}
-
-.about-page p {
-    color: #666;
-    line-height: 1.6;
-}
-
-/* Responsive design */
 @media (max-width: 768px) {
-     .header {
+      .header {
         flex-direction: column;
         align-items: center;
         padding: 20px;
@@ -134,26 +214,17 @@ body {
     .nav-links li {
         margin: 10px 0;
     }
- }
-    .about-page {
-        padding: 15px; /* Aangepaste padding voor de inhoud */
-        max-width: 100%; /* Volledige breedte op kleine schermen */
-    }
+	
 
-    .footer-links {
-        flex-direction: column; /* Voetteksten onder elkaar */
-    }
 
-    .footer-links li {
-        margin-bottom: 10px; /* Ruimte tussen voettekstlinks */
-    }
-}
+        
     </style>
 </head>
 <body>
+
     <div class="header">
-        <h1>Eco-Actief - Nieuws</h1>
-         <div class="nav-menu">
+        <h1>OverOns</h1>
+        <div class="nav-menu">
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="nieuws.html">Nieuws</a></li>
@@ -173,7 +244,6 @@ body {
 
 
 
-    <!-- Footer -->
 <footer class="site-footer">
     <p>&copy; 2024 Eco-Actief. Alle rechten voorbehouden.</p>
     <ul class="footer-links">
@@ -182,6 +252,5 @@ body {
         <li><a href="contact.html">Contact</a></li>
     </ul>
 </footer>
-
 </body>
 </html>
