@@ -154,12 +154,24 @@ body {
     transform: scale(1.05);
 }
 
+.content {
+    max-width: 1000px; /* Pas de waarde aan zoals gewenst */
+    margin: 0 auto; /* Centreer de inhoud horizontaal */
+    padding: 0 10px; /* Voeg ruimte toe aan de buitenzijde */
+    box-sizing: border-box; /* Zorgt ervoor dat padding binnen de max-width valt */
+}
+
 /* Responsieve stijlen voor mobiele apparaten */
 @media (max-width: 768px) {
     .header {
         flex-direction: column;
         align-items: center;
         padding: 20px;
+    }
+	    .content {
+        max-width: 90%; /* Verminder de maximale breedte voor kleinere schermen */
+        margin: 0 auto; /* Centreer de inhoud horizontaal */
+        padding: 0 10px; /* Verminder de padding aan beide zijden */
     }
 
     .header h1 {
